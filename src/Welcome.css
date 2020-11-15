@@ -1,0 +1,16 @@
+#welcome-screen {
+    align-items: center;
+    display: flex;
+    text-align: center;
+  }
+  
+  #welcome-screen h1 {
+    color: gold;
+    font-size: 35pt;
+    font-weight: normal;
+  }
+  
+  #welcome-screen p {
+    font-size: 16pt;
+    padding-bottom: 20px;
+  }
