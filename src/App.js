@@ -3,7 +3,14 @@ import Welcome from './Welcome';
 import React, { Component } from 'react';
 
 class App extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      begin: false
+    
+      
+    };
+  }
 
   componentDidMount() {
     this.floatingCandles();
@@ -22,8 +29,26 @@ class App extends Component {
     }, 1200);
   };
 
+  handleQuizStart = () => {
+    this.setState({ begin: true });
+  };
+
   render() {
-  
+    if (this.state.begin === true) {
+      return (
+        <div className="wrapper">
+          <div id="left-candle" className="candle left">
+            <div className="flame" />
+            <div className="wax" />
+          </div>
+         
+          <div id="right-candle" className="candle right">
+            <div className="flame" />
+            <div className="wax" />
+          </div>
+        </div>
+      );
+    } else {
       return (
 
         <div className="wrapper">
@@ -31,13 +56,14 @@ class App extends Component {
           <div className="flame" />
           <div className="wax" />
         </div>
-       <Welcome/>
+        <Welcome beginQuiz={this.handleQuizStart} />
         <div id="right-candle" className="candle right">
           <div className="flame" />
           <div className="wax" />
         </div>
       </div>
     );
+      }
           
 }
       
